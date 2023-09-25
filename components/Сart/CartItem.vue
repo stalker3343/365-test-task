@@ -93,7 +93,7 @@ export default {
       if (this.product.count !== 1) {
         this.SET_CARD_ITEM_COUNT({
           productId: this.product.id,
-          offerId: this.product?.offer.id,
+          offerId: this.product.offer?.id,
           count: this.product.count - 1,
         })
         return
@@ -102,7 +102,7 @@ export default {
       if (isItemDelete) {
         this.REMOVE_CART_ITEM({
           productId: this.product.id,
-          offerId: this.product?.offer.id,
+          offerId: this.product.offer?.id,
         })
       }
     },
