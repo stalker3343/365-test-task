@@ -1,9 +1,9 @@
-
-
 <template>
-  <div  :style="{'background-color': filterItem.value}" :class="{'size-item': true, 'size-item-selected': selected }" v-on="$listeners">
-   
-  </div>
+  <div
+    :style="{ 'background-color': filterItem.value }"
+    :class="{ 'size-item': true, 'size-item-selected': selected }"
+    v-on="$listeners"
+  ></div>
 </template>
 
 <script>

@@ -1,21 +1,23 @@
 <template>
   <v-container>
-    <v-row >
+    <v-row>
       <v-col cols="12" md="4">
         <FiltersBlock :filters="filters"></FiltersBlock>
       </v-col>
       <v-col cols="12" md="8">
         <v-row v-if="FILTERED_PRODUCTS.length">
-          <v-col v-for="product in FILTERED_PRODUCTS" :key="product.id"  cols="12" md="4">
+          <v-col
+            v-for="product in FILTERED_PRODUCTS"
+            :key="product.id"
+            cols="12"
+            md="4"
+          >
             <ProductCard :product="product"></ProductCard>
           </v-col>
         </v-row>
-         <v-row v-else>
-          <v-col>
-            Нет товаров для выбранных характеристик
-          </v-col>
+        <v-row v-else>
+          <v-col> Нет товаров для выбранных характеристик </v-col>
         </v-row>
-
       </v-col>
     </v-row>
   </v-container>

@@ -10,19 +10,17 @@ export default function ({ $axios, $config }, inject) {
   inject('productsRepository', {
     products() {
       return new Promise((resolve, reject) => {
-        setTimeout(()=>{
+        setTimeout(() => {
           resolve(products)
         })
       })
     },
     filter() {
       return new Promise((resolve, reject) => {
-        setTimeout(()=>{
+        setTimeout(() => {
           resolve(filter)
         })
       })
     },
   })
-
-  
 }

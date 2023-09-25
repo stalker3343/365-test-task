@@ -1,6 +1,6 @@
 <template>
-  <div :class="{'font-weight-bold': selected}" v-on="$listeners">
-    {{filterItem.title}}
+  <div :class="{ 'font-weight-bold': selected }" v-on="$listeners">
+    {{ filterItem.title }}
   </div>
 </template>
 
@@ -19,5 +19,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

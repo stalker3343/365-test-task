@@ -2,9 +2,14 @@
   <div>
     <div v-for="filterItem in filters" :key="filterItem.id">
       <div class="text-h5 mb-2">
-        {{filterItem.title}}
+        {{ filterItem.title }}
       </div>
-      <FilterItems :value="FILTERS[filterItem.type]" :filter-type="filterItem.type" :items="filterItem.value" @select-filter="onSelectFilter"></FilterItems>
+      <FilterItems
+        :value="FILTERS[filterItem.type]"
+        :filter-type="filterItem.type"
+        :items="filterItem.value"
+        @select-filter="onSelectFilter"
+      ></FilterItems>
     </div>
   </div>
 </template>
@@ -52,5 +57,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

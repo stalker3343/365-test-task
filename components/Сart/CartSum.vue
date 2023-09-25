@@ -1,17 +1,16 @@
 <template>
   <v-card>
     <v-card-text>
-        <div class="text-h5">
-           <span class="text-h6">Товаров:</span> {{GET_CARD_ITEMS_COUNT}}   
-        </div>
-        <div class="text-h5">
-           <span class="text-h6">Итого</span>  {{GET_CARD_ITEMS_SUMM}}
-        </div>
+      <div class="text-h5">
+        <span class="text-h6">Товаров:</span> {{ GET_CARD_ITEMS_COUNT }}
+      </div>
+      <div class="text-h5">
+        <span class="text-h6">Итого</span> {{ GET_CARD_ITEMS_SUMM }}
+      </div>
     </v-card-text>
     <v-card-actions>
-        <v-btn @click="onBuy">Купить</v-btn>
+      <v-btn @click="onBuy">Купить</v-btn>
     </v-card-actions>
-    
   </v-card>
 </template>
 
@@ -34,5 +33,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

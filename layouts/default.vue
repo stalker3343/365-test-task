@@ -1,12 +1,15 @@
 <template>
- <v-app id="inspire">
-
-
+  <v-app id="inspire">
     <v-app-bar app>
       <v-container>
         <v-row>
           <v-col class="d-flex align-center">
-            <v-toolbar-title class="toolbar-title" @click="$router.push({name: 'index'})">Логотип</v-toolbar-title>
+            <v-toolbar-title
+              class="toolbar-title"
+              @click="$router.push({ name: 'index' })"
+            >
+              Логотип
+            </v-toolbar-title>
             <v-spacer></v-spacer>
 
             <v-badge
@@ -15,12 +18,9 @@
               color="green"
               overlap
             >
-              <v-btn icon @click="$router.push({name: 'basket'})">
-                <v-icon large>
-                  mdi-cart
-                </v-icon>
+              <v-btn icon @click="$router.push({ name: 'basket' })">
+                <v-icon large> mdi-cart </v-icon>
               </v-btn>
-              
             </v-badge>
           </v-col>
         </v-row>

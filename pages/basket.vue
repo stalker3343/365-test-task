@@ -7,25 +7,23 @@
     </v-row>
     <v-row v-if="CARD_ITEMS.length">
       <v-col cols="12" md="8">
-        <CartItem v-for="(item,idx) in CARD_ITEMS" :key="idx" class="mb-2" :product="item"></CartItem>
+        <CartItem
+          v-for="(item, idx) in CARD_ITEMS"
+          :key="idx"
+          class="mb-2"
+          :product="item"
+        ></CartItem>
       </v-col>
-       <v-col cols="12" md="4">
-          <CartSum></CartSum>    
-       </v-col>
-    </v-row>
-     <v-row v-else>
-      <v-col >
-        <div>
-          В корзине пока нет товара
-        </div>
-        <nuxt-link :to="{name: 'index'}">
-          Перейти в каталог
-        </nuxt-link>
+      <v-col cols="12" md="4">
+        <CartSum></CartSum>
       </v-col>
-  
     </v-row>
-
-
+    <v-row v-else>
+      <v-col>
+        <div>В корзине пока нет товара</div>
+        <nuxt-link :to="{ name: 'index' }"> Перейти в каталог </nuxt-link>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -45,5 +43,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

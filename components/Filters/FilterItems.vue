@@ -1,16 +1,18 @@
 <template>
-  <div class="d-flex" :class="{'flex-column': filterType==='brands' }">
+  <div class="d-flex" :class="{ 'flex-column': filterType === 'brands' }">
     <component
       :is="itemComponent"
       v-for="filterItemValue in items"
       :key="filterItemValue.id"
       :selected="value === filterItemValue.id"
       class="mb-4 filter-item"
-      :filter-item="filterItemValue" 
-      @click="$emit('select-filter', {
-        type: filterType,
-        value: filterItemValue.id 
-      })"
+      :filter-item="filterItemValue"
+      @click="
+        $emit('select-filter', {
+          type: filterType,
+          value: filterItemValue.id,
+        })
+      "
     >
     </component>
   </div>

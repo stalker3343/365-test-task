@@ -2,26 +2,29 @@
   <div>
     <div class="d-flex mb-2">
       <div
-        v-for="color of availabelColors" :key="color" class="color-box"  
+        v-for="color of availabelColors"
+        :key="color"
+        class="color-box"
         :class="{
-          [`color-box-${color}`] : true, 
-          'color-box-selected': selectedColor === color
+          [`color-box-${color}`]: true,
+          'color-box-selected': selectedColor === color,
         }"
-       @click="onSelectColor(color)">
-      </div>
-    </div> 
+        @click="onSelectColor(color)"
+      ></div>
+    </div>
     <div v-if="selectedColor" class="d-flex">
       <button
-        v-for="size in normalizeColors[selectedColor]" :key="size.id" 
+        v-for="size in normalizeColors[selectedColor]"
+        :key="size.id"
         :class="{
-          'size-item-not-available': size.available < 1, 
-          'size-item-selected': value && value.id === size.id
-         }" 
+          'size-item-not-available': size.available < 1,
+          'size-item-selected': value && value.id === size.id,
+        }"
         class="size-item"
         :disabled="size.available < 1"
         @click="onSelectSize(size)"
       >
-        {{size.sizes}}
+        {{ size.sizes }}
       </button>
     </div>
   </div>

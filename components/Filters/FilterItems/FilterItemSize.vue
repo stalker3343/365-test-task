@@ -1,9 +1,9 @@
 <template>
   <div
-    :class="{'size-item-selected': selected, 'size-item': true}"
+    :class="{ 'size-item-selected': selected, 'size-item': true }"
     v-on="$listeners"
- >
-    {{filterItem.title}}
+  >
+    {{ filterItem.title }}
   </div>
 </template>
 

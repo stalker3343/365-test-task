@@ -1,59 +1,54 @@
 <template>
   <div class="cart-item">
-    <div class="d-flex ">
+    <div class="d-flex">
       <!-- TODO у некоторых offers есть картинка -->
-        <img class="cart-item-img mr-3" :src="productImg" />
-        <div class="d-flex flex-column">
-
- 
+      <img class="cart-item-img mr-3" :src="productImg" />
+      <div class="d-flex flex-column">
         <div class="text-h6 mb-2">
-            {{product.brand }} | {{product.title}}
+          {{ product.brand }} | {{ product.title }}
         </div>
         <template v-if="hasOffer">
           <div v-if="product.offer.color" class="d-flex align-center">
-            <div class="mr-2">
-              Цвет:
-            </div>
-            <div class="color-block" :style="{'background-color':product.offer.color }">
-            </div>
-            
+            <div class="mr-2">Цвет:</div>
+            <div
+              class="color-block"
+              :style="{ 'background-color': product.offer.color }"
+            ></div>
           </div>
 
           <div v-if="product.offer.sizes" class="d-flex align-center">
-            <div class="mr-2">
-              Размер:
-            </div>
+            <div class="mr-2">Размер:</div>
             <div>
-              {{product.offer.sizes}}
+              {{ product.offer.sizes }}
             </div>
-            
           </div>
         </template>
       </div>
-
     </div>
     <div class="d-flex align-center">
       <div class="d-flex align-center mr-4">
-        <v-btn height="40" color="secondary" x-small @click="onClickMinus" >
+        <v-btn height="40" color="secondary" x-small @click="onClickMinus">
           <v-icon>mdi-minus</v-icon>
         </v-btn>
         <div class="count-number">
-          {{product.count}}
+          {{ product.count }}
         </div>
-        <v-btn :disabled="product.count === maxItemsCount"  height="40" color="secondary" x-small   @click="onClickPlus">
+        <v-btn
+          :disabled="product.count === maxItemsCount"
+          height="40"
+          color="secondary"
+          x-small
+          @click="onClickPlus"
+        >
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </div>
 
-
-        
-      <div class="mr-3">{{productSumm}}</div>
+      <div class="mr-3">{{ productSumm }}</div>
       <v-btn icon @click="removeProduct">
         <v-icon>mdi-close</v-icon>
-
       </v-btn>
     </div>
-
   </div>
 </template>
 

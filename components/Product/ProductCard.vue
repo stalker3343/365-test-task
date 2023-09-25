@@ -1,29 +1,26 @@
 <template>
   <v-card :disabled="isOutOfStock">
-    <v-img
-        height="250"
-        :src="productImg"
-    ></v-img>
+    <v-img height="250" :src="productImg"></v-img>
 
-      <v-card-title>{{product.title}}</v-card-title>
-      <v-card-text>
-        <div class="mb-2">
-          {{product.brand}}
-        </div>
-        <div class="mb-2">
-          {{productPrice}}
-        </div>
-        <ProductOfferSelect 
-          v-if="product.offers" 
-          v-model="selectedOffer" 
-          :offers="product.offers"
-        ></ProductOfferSelect>
-      </v-card-text>
-      <v-card-actions>
-        <v-btn block @click="onCartActionClick">
-          {{cartBtnText}}
-        </v-btn>
-      </v-card-actions>
+    <v-card-title>{{ product.title }}</v-card-title>
+    <v-card-text>
+      <div class="mb-2">
+        {{ product.brand }}
+      </div>
+      <div class="mb-2">
+        {{ productPrice }}
+      </div>
+      <ProductOfferSelect
+        v-if="product.offers"
+        v-model="selectedOffer"
+        :offers="product.offers"
+      ></ProductOfferSelect>
+    </v-card-text>
+    <v-card-actions>
+      <v-btn block @click="onCartActionClick">
+        {{ cartBtnText }}
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
@@ -110,5 +107,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>
