@@ -12,7 +12,7 @@ export default {
     titleTemplate: '%s - 365-test',
     title: '365-test',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ru'
     },
     meta: [
       { charset: 'utf-8' },
