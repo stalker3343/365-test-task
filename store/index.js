@@ -1,4 +1,5 @@
 import {set} from  'vue'
+import {ADD_CART_PRODUCT,REMOVE_CART_ITEM,SET_CARD_ITEM_COUNT,SET_FILTERS,SET_LOCAL_STORAGE_STATE,SET_PRODUCTS} from './type.mutations'
 import { formatThousandSeparator } from '@/helpers'
 import { currencyToIcon } from '@/const'
 export const state = () => {
@@ -14,19 +15,19 @@ export const state = () => {
   }
   
   export const mutations = {
-    SET_PRODUCTS(state, payload){
+    [SET_PRODUCTS](state, payload){
       state.PRODUCTS = payload
     },
-    SET_FILTERS(state, payload){
+    [SET_FILTERS](state, payload){
       state.FILTERS = {...state.FILTERS, ...payload}
     },
-    SET_LOCAL_STORAGE_STATE(state, payload){
+    [SET_LOCAL_STORAGE_STATE](state, payload){
       state.CARD_ITEMS = payload
     },
-    ADD_CART_PRODUCT(state, item) {
+    [ADD_CART_PRODUCT](state, item) {
       state.CARD_ITEMS.push(item)
     },
-    REMOVE_CART_ITEM(state, {
+    [REMOVE_CART_ITEM](state, {
       productId,
       offerId = null,
     }){
@@ -39,7 +40,7 @@ export const state = () => {
       }
       state.CARD_ITEMS = state.CARD_ITEMS.filter(el=> el.id !== productId)
     },
-    SET_CARD_ITEM_COUNT(state, {productId, offerId, count}) {
+    [SET_CARD_ITEM_COUNT](state, {productId, offerId, count}) {
       let editedItemIdx = null
       if(offerId){
         editedItemIdx = state.CARD_ITEMS.findIndex(el=> {
