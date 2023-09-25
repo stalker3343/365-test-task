@@ -24,14 +24,10 @@
             </v-badge>
           </v-col>
         </v-row>
-
-          
       </v-container>
-
     </v-app-bar>
 
     <v-main>
-      
       <nuxt></nuxt>
     </v-main>
   </v-app>
@@ -56,8 +52,8 @@ export default {
     }
 
     this.unwatch = this.$store.watch(
-      (state, getters) => state.CARD_ITEMS,
-      (newValue, oldValue) => {
+      (state) => state.CARD_ITEMS,
+      (newValue) => {
         localStorage.setItem('CART_ITEMS', JSON.stringify(newValue))
       }
     )

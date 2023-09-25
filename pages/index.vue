@@ -33,10 +33,10 @@ export default {
     FiltersBlock,
   },
 
-  async asyncData(ctx) {
-    const products = await ctx.$productsRepository.products()
-    const filters = await ctx.$productsRepository.filter()
-    ctx.store.commit('SET_PRODUCTS', products)
+  async asyncData({ $productsRepository, store }) {
+    const products = await $productsRepository.products()
+    const filters = await $productsRepository.filter()
+    store.commit('SET_PRODUCTS', products)
 
     return { products, filters: normalizeFilters(filters) }
   },

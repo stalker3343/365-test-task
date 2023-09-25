@@ -2,7 +2,7 @@
   <v-card :disabled="isOutOfStock">
     <v-img
         height="250"
-        :src="product.image"
+        :src="productImg"
     ></v-img>
 
       <v-card-title>{{product.title}}</v-card-title>
@@ -74,6 +74,9 @@ export default {
       return `${formatThousandSeparator(this.product.price.value)} ${
         currencyToIcon[this.product.price.currency]
       }`
+    },
+    productImg() {
+      return this.selectedOffer?.image || this.product.image
     },
   },
   methods: {

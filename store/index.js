@@ -54,10 +54,7 @@ export const state = () => {
 
       const editedItem = state.CARD_ITEMS[editedItemIdx]
       set(state.CARD_ITEMS, editedItemIdx, {...editedItem, count} )
-
-
     },
-
   }
   
   export const actions = {}
